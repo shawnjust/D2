@@ -13,7 +13,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.text.format.Time;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -195,12 +194,14 @@ public class Clock extends View {
 		}
 		minuteHand.draw(canvas);
 		canvas.restore();
-		
+
+		Time time = new Time();
+		time.setToNow();
 		for (MyTime f : vec) {
+			if (f.isOK(time)) {
 			canvas.save();
 			final Drawable pointDra = mPoint;
-			Time time = new Time();
-			time.setToNow();
+			
 			if (changed) {
 				w = pointDra.getIntrinsicWidth();
 				h = pointDra.getIntrinsicHeight();
@@ -208,10 +209,9 @@ public class Clock extends View {
 				pointDra.setBounds(x - (w / 2), y - (h / 2), x + (w / 2), y
 						+ (h / 2));
 			}
-			if (!f.isOK(time)) {
-			pointDra.draw(canvas);
-			}
+				pointDra.draw(canvas);
 			canvas.restore();
+			}
 		}
 
 		canvas.save();

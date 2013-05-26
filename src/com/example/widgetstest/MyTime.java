@@ -26,10 +26,11 @@ public class MyTime {
 		int nowWeekday = time.weekDay;
 		float angle = 0.0f;
 		if (compare(nowHour, nowMinute, nowWeekday)) {
-			Log.i("----------------", "" + nowHour + " " + nowMinute + " " + nowWeekday);
+			Log.v("----------------", "" + nowHour + " " + nowMinute + " " + nowWeekday);
+			Log.v("----------------", "" + this.hour + " " + this.minute + " " + this.week);
 			for (int i = 0; i < week.size(); ++i) {
 				if (week.get(i) == nowWeekday && this.biggerThan(nowHour, nowMinute)) {
-					float a = hour *30 + minute * 0.5f;
+					float a = hour * 30 + minute * 0.5f;
 					angle = a;
 				} else if (week.get(i) == nowWeekday + 1 && this.smallerThan(nowHour, nowMinute)) {
 					float a = hour * 30 + minute * 0.5f;
