@@ -199,18 +199,18 @@ public class Clock extends View {
 		time.setToNow();
 		for (MyTime f : vec) {
 			if (f.isOK(time)) {
-			canvas.save();
-			final Drawable pointDra = mPoint;
+				canvas.save();
+				final Drawable pointDra = mPoint;
 			
-			if (changed) {
-				w = pointDra.getIntrinsicWidth();
-				h = pointDra.getIntrinsicHeight();
-				canvas.rotate(f.getRotation(time), x, y);
-				pointDra.setBounds(x - (w / 2), y - (h / 2), x + (w / 2), y
-						+ (h / 2));
-			}
+				if (changed) {
+					w = pointDra.getIntrinsicWidth();
+					h = pointDra.getIntrinsicHeight();
+					canvas.rotate(f.getRotation(time), x, y);
+					pointDra.setBounds(x - (w / 2), y - (h / 2), x + (w / 2), y
+							+ (h / 2));
+				}
 				pointDra.draw(canvas);
-			canvas.restore();
+				canvas.restore();
 			}
 		}
 
