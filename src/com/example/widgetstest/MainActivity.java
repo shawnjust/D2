@@ -21,7 +21,6 @@ public class MainActivity extends Activity {
 	public void init() {
 		info = (TextView) findViewById(R.id.info);
 
-		clock = (Clock) findViewById(R.id.clock);
 		clock.setOnChoseListener(new OnChoseListener() {
 			@Override
 			public void onChose(int position) {
@@ -39,19 +38,24 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
 		clock = (Clock) findViewById(R.id.clock);
+		
 		ArrayList<Integer> abcc = new ArrayList<Integer>();
 		abcc.add(new Integer(0));
 
-		myTime = new MyTime(true, abcc, 13, 0);
+		myTime = new MyTime(true, abcc, 22, 00);
 		clock.addTimePoint(myTime);
-		myTime = new MyTime(true, abcc, 15, 20);
+		
+		ArrayList<Integer> abcc1 = new ArrayList<Integer>();
+		abcc1.add(new Integer(1));
+		myTime = new MyTime(true, abcc1, 2, 20);
 		clock.addTimePoint(myTime);
 
-		myTime = new MyTime(true, abcc, 14, 20);
+		myTime = new MyTime(true, abcc, 18, 10);
 		clock.addTimePoint(myTime);
 
-		myTime = new MyTime(true, abcc, 18, 20);
+		myTime = new MyTime(true, abcc, 17, 50);
 		clock.addTimePoint(myTime);
 
 		init();
