@@ -40,8 +40,8 @@ public class MainActivity extends Activity {
 		clock = (Clock) findViewById(R.id.clock);
 		ArrayList<Integer> abcc = new ArrayList<Integer>();
 		abcc.add(new Integer(0));
-		myTime = new MyTime(true, abcc, 13, 0);
 		
+		myTime = new MyTime(true, abcc, 13, 0);
 		clock.addTimePoint(myTime);
 		myTime = new MyTime(true, abcc, 15, 20);
 		clock.addTimePoint(myTime);
