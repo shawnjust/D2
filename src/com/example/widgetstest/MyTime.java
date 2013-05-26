@@ -12,12 +12,14 @@ public class MyTime {
 	// int day;
 	int hour;
 	int minute;
+	String message;
 
 	public MyTime(boolean isOn, ArrayList<Integer> week, int hour, int minute) {
 		this.isOn = isOn;
 		this.week = week;
 		this.hour = hour;
 		this.minute = minute;
+		this.message = "init";
 	}
 
 	public float getRotation(Time time) {
