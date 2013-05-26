@@ -37,6 +37,7 @@ public class MyTime {
 				}
 			}
 		}
+		Log.i("angle", "" + angle);
 		return angle;
 	}
 	

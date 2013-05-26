@@ -5,12 +5,23 @@
     android:background="@drawable/clock_background"
     tools:context=".MainActivity" >
 
-    <com.example.widgetstest.Clock
-        android:id="@+id/clock"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_height="wrap_content" >
+
+        <com.example.widgetstest.Clock
+            android:id="@+id/clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="aaaaabbbbbbbbbbbb" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/button1"
